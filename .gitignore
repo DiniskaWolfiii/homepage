@@ -1,0 +1,7 @@
+.venv
+.env
+.vscode
+__pycache__
+**/__pycache__/
+git_update.sh
+node_modules
