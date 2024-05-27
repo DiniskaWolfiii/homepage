@@ -13,6 +13,20 @@
   }
 }
 
+.first-header, .second-header, .third-header {
+  animation: fadeIn 1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.second-header {
+  animation-delay: 1s;
+}
+
+.third-header {
+  animation-delay: 2s;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -26,6 +40,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes App-logo-spin {
