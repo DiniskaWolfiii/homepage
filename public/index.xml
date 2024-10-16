@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wolfiii</title>
-    <link>https://wolfiii.gay/</link>
+    <link>$CF_PAGES_URL/</link>
     <description>Recent content on Wolfiii</description>
     <generator>Hugo</generator>
     <language>DE-de</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://wolfiii.gay/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="$CF_PAGES_URL/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
