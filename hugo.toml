@@ -1,0 +1,4 @@
+baseURL = 'https://wolfiii.gay'
+languageCode = 'DE-de'
+title = 'Wolfiii'
+theme = 'hugo-theme-quint'
