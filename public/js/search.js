@@ -1,54 +1,138 @@
-function displayResults(results, store) {
-    const searchResults = document.getElementById('results');
-    if (!searchResults) {
-        console.error('Search results container is missing in the DOM');
-        return;
+async function searchOnChange(evt) {
+  let searchQuery = evt.target.value;
+  var inputEle = document.querySelectorAll("input#search");
+  inputEle.forEach((element) => {
+    element.value = searchQuery;
+  });
+
+  if (searchQuery !== "") {
+    if (!window.searchJson) {
+      window.searchJson = await fetch("/index.json").then((res) => res.json());
     }
-    if (results.length) {
-        let resultList = ''
-        // Iterate and build result list elements
-        for (const n in results) {
-            const item = store[results[n].ref]
-            resultList += '<div class="card"><a href="' + item.url + '"><div class="text"><h2>' + item.title + '</h2>'
-            resultList += '<p class="small">' + item.content.substring(0, 150) + '...</p></a></div></div>'
-        }
-        searchResults.innerHTML = resultList
+
+    let searchResults = searchJson.filter((item) => {
+      let res = false;
+      if (item.title && item.description && item.content) {
+        res =
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.content.toLowerCase().includes(searchQuery.toLowerCase());
+      } else if (item.title && item.description) {
+        res =
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().includes(searchQuery.toLowerCase());
+      } else if (item.title && item.content) {
+        res =
+          item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.content.toLowerCase().includes(searchQuery.toLowerCase());
+      } else if (item.description && item.content) {
+        res =
+          item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.content.toLowerCase().includes(searchQuery.toLowerCase());
+      } else if (item.title) {
+        res = item.title.toLowerCase().includes(searchQuery.toLowerCase());
+      } else if (item.description) {
+        res = item.description
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+      } else if (item.content) {
+        res = item.content.toLowerCase().includes(searchQuery.toLowerCase());
+      }
+      return res;
+    });
+    if (searchResults.length > 0) {
+      let searchResultsHtml = "";
+      searchResults.map((item) => {
+        searchResultsHtml += `<div class="card">
+                        <a href="${item.permalink}">
+                            <div class="p-3">
+                                <h5>${item.title}</h5>
+                                <div>${item.description}</div>
+                            </div>
+                       </a>
+                    </div>`;
+      });
+      document.getElementById("search-results").innerHTML = searchResultsHtml;
     } else {
-        searchResults.innerHTML = 'No results found.'
+      let searchResultsHtml = `<p class="text-center py-3">No results found for "${searchQuery}"</p>`;
+      document.getElementById("search-results").innerHTML = searchResultsHtml;
     }
+    alignSearchContent();
+    document.getElementById("search-content").style.display = "block";
+  } else {
+    document.getElementById("search-content").style.display = "none";
+    document.getElementById("search-results").innerHTML = "";
+  }
 }
 
-// Get the query parameter(s)
-const params = new URLSearchParams(window.location.search)
-const query = params.get('query')
+function alignSearchContent() {
+  const searchButtonEle = document.querySelectorAll("#search");
+  // check if search value is not empty
+  for (let i = 0; i < searchButtonEle.length; i++) {
+    if (searchButtonEle[i].value !== "") {
+      let searchButtonPosition;
+      if (window.innerWidth > 768) {
+        searchButtonPosition = searchButtonEle[0].getBoundingClientRect();
+        document.getElementById("search-content").style.width = "500px";
+      } else {
+        var navbarCollapse = document.querySelector("#navbarContent");
+        navbarCollapse.classList.add("show");
+        searchButtonPosition = searchButtonEle[1].getBoundingClientRect();
+        document.getElementById("search-content").style.width = "300px";
+      }
 
-// Perform a search if there is a query
-if (query) {
-    // Retain the search input in the form when displaying results
-    document.getElementById('search-input').setAttribute('value', query)
-
-    const idx = lunr(function () {
-        this.ref('id')
-        this.field('title', {
-            boost: 15
-        })
-        this.field('tags')
-        this.field('content', {
-            boost: 10
-        })
-
-        for (const key in window.store) {
-            this.add({
-                id: key,
-                title: window.store[key].title,
-                tags: window.store[key].category,
-                content: window.store[key].content
-            })
-        }
-    })
-
-    // Perform the search
-    const results = idx.search(query)
-    // Update the list with results
-    displayResults(results, window.store)
+      document.getElementById("search-content").style.top =
+        searchButtonPosition.top + 50 + "px";
+      document.getElementById("search-content").style.left =
+        searchButtonPosition.left + "px";
+    }
+  }
 }
+
+function resetSearch(e) {
+  if (
+    e.keyCode === 27 ||
+    (e.target.id !== "search" &&
+      e.target.closest("section#search-content") === null)
+  ) {
+    if (document.getElementById("search-results").innerHTML !== "") {
+      document.getElementById("search-content").style.display = "none";
+      document.getElementById("search-results").innerHTML = "";
+      var inputEle = document.querySelectorAll("input#search");
+      inputEle.forEach((element) => {
+        element.value = "";
+        element.blur();
+      });
+    }
+  }
+}
+
+document.onkeyup = function () {
+  switch (event.keyCode) {
+    // ESC
+    case 27:
+      resetSearch(event);
+      break;
+
+    // ctrl + k
+    case 75:
+      if (event.ctrlKey) {
+        document.getElementById("search").focus();
+      }
+      break;
+  }
+};
+
+window.addEventListener("keydown", function (e) {
+  if (e.keyCode === 75 && e.ctrlKey) {
+    e.preventDefault();
+  }
+});
+
+// Close search on click outside and on resize
+document.addEventListener("click", function (e) {
+  resetSearch(e);
+});
+window.addEventListener("resize", function (e) {
+  alignSearchContent();
+});
