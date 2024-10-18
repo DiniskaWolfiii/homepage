@@ -1,11 +1,20 @@
 baseURL = 'https://wolfiii.gay'
 languageCode = 'DE-de'
 title = 'Wolfiii'
-theme = 'coming-soon'
+theme = 'gokarna'
 
 [params]
-    title = "Wolfiii"
-    favicon = ""
-    message = "COMING SOON!" 
-    release = "Jan 1, 2025" 
-    background = "" 
+    socialIcons = [
+        {name = "twitter", url = "https://twitter.com/DiniskaWolfiii"},
+        {name = "bluesky", url = "https://bsky.app/profile/wolfiii.gay"},
+        {name = "instagram", url = "https://www.instagram/wolfiii.fur"},
+        {name = "telegram", url = "https://t.me/diniskawolfiii"},
+        {name = "discord", url = "https://discord.gg/fF4FBkT9BB"},
+        {name = "github", url = "https://github.com/DiniskaWolfiii"},
+        {name = "email", url = "mailto:wolfiii@wolfiii.gay"},
+        {name = "reddit", url = "https://www.reddit.com/user/DiniskaWolfiii"},
+        {name = "spotify", url = "https://open.spotify.com/user/fx3ogmbcisss6ujmurti0yevj?si=8cfab8efb229464b"}
+    ]
+    avatarURL = "/images/avatar.webp"
+    description = "Awoooo!"
+    copyright = "Wolfiii. All rights reserved."

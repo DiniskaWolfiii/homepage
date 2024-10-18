@@ -2,14 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-16T11:01:08+02:00</lastmod>
+    <loc>https://wolfiii.gay/index-about/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-10-16T11:01:08+02:00</lastmod>
+    <loc>https://wolfiii.gay/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://wolfiii.gay/tags/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://wolfiii.gay/</loc>
   </url>
 </urlset>
