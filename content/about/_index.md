@@ -13,3 +13,5 @@ Hi, I'm Wolfiii, a 23-year-old gray wolf furry living in southern Germany. I've 
 When I’m not in my furry headspace, I’m working in IT, playing video games, or hanging out with my friends. I enjoy singing, listening to all kinds of music, hiking, and traveling, especially with my amazing boyfriend by my side.
 
 On this site, I'll be sharing my personal experiences as a furry—everything from convention stories to helpful tips and tricks for fellow furries. I want to create a space where I can document my furry journey and maybe help others along the way. So, grab your tail and ears, and join me on this adventure! 😊
+
+![Wolfiii](/images/wolfiii_italy.jpg)
