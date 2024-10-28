@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wolfiii.gay/about/</loc>
-    <lastmod>2024-10-23T00:00:00+00:00</lastmod>
+    <loc>https://wolfiii.gay/copyright/</loc>
+    <lastmod>2024-10-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://wolfiii.gay/</loc>
+    <lastmod>2024-10-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wolfiii.gay/stories/conventions/</loc>
+    <lastmod>2024-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wolfiii.gay/stories/conventions/ef28/</loc>
+    <lastmod>2024-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wolfiii.gay/stories/</loc>
+    <lastmod>2024-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://wolfiii.gay/about/</loc>
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://wolfiii.gay/index-about/</loc>

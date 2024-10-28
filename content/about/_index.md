@@ -14,4 +14,6 @@ When I’m not in my furry headspace, I’m working in IT, playing video games, 
 
 On this site, I'll be sharing my personal experiences as a furry—everything from convention stories to helpful tips and tricks for fellow furries. I want to create a space where I can document my furry journey and maybe help others along the way. So, grab your tail and ears, and join me on this adventure! 😊
 
-![Wolfiii](/images/wolfiii_italy.jpg)
+![Wolfiii walking to the camera on the Italian Lake Garda](/images/wolfiii_italy.jpg)
+
+![Wolfiii's Motorcycle](/images/motorcycle.jpg)

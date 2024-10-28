@@ -1,25 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wolfiii</title>
-    <link>https://wolfiii.gay/</link>
-    <description>Recent content on Wolfiii</description>
+    <title>Conventions on Wolfiii</title>
+    <link>https://wolfiii.gay/stories/conventions/</link>
+    <description>Recent content in Conventions on Wolfiii</description>
     <generator>Hugo</generator>
     <language>DE-de</language>
     <lastBuildDate>Fri, 25 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://wolfiii.gay/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wolfiii.gay/stories/conventions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ef28</title>
       <link>https://wolfiii.gay/stories/conventions/ef28/</link>
       <pubDate>Fri, 25 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://wolfiii.gay/stories/conventions/ef28/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://wolfiii.gay/index-about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://wolfiii.gay/index-about/</guid>
       <description></description>
     </item>
   </channel>

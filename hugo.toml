@@ -5,10 +5,17 @@ theme = 'gokarna'
 
 [menu]
     [[menu.main]]
+        name = "Stories"
+        url = "/stories"
+        weight = 1
+    [[menu.main]]
         name = "About Me"
         url = "/about"
-        weight = 1
-
+        weight = 2
+    [[menu.main]]
+        name = "Copyright"
+        url = "/copyright"
+        weight = 3
 [params]
     socialIcons = [
         {name = "twitter", url = "https://twitter.com/DiniskaWolfiii"},
